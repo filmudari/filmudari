@@ -6,68 +6,105 @@
 .footer__logo .fd-logo { height: 44px; }
 @media (max-width: 639px) { .nav .fd-logo { height: 22px; } .footer__logo .fd-logo { height: 32px; } }
 
-/* hero: the right column of the film frame holds the play control and the charge panel */
-/* the frame's two columns sit on the page's split pair (x 708 / 732): the box on the left, the play
-   control and the charge panel at the foot of the right column */
-@media (min-width: 1024px) {
-  .hero--film .hero__over { grid-template-columns: minmax(0, 1fr); }
-  .hero--film .hero__over > :first-child { max-width: calc(50% - 12px); }
-  .hero--film .hero-side { position: absolute; right: var(--s-6); bottom: var(--s-6); top: var(--s-6); width: 400px; }
+/* the page rhythm. The kit sets every section to one or two screens (house rule 3); this page drops that
+   (operator's call): a section is as tall as its content plus one spacing scale.
+     --fd-sec    96 / 64  a section's top and bottom padding; the one gap between two sections on one ground
+     --head-gap  48 / 32  a heading block to its content, and between closely related blocks (kit token)
+     --fd-gap    24 / 16  between items of one block
+   The hero stays the first screen. */
+:root { --fd-sec: var(--s-9); --fd-gap: var(--s-5); }
+@media (max-width: 639px) { :root { --fd-sec: var(--s-8); --fd-gap: var(--s-4); } }
+html { scroll-padding-top: var(--nav); }
+html main > section.section:not(.hero), html footer.closing {
+  height: auto; min-height: 0; display: block; padding: var(--fd-sec) 0;
 }
-.hero-side { display: grid; justify-items: end; align-content: space-between; gap: var(--s-4); }
-.hero-side > .charge { width: min(400px, 100%); }
+html main > section.section:not(.hero) > .wrap, html footer.closing > .wrap { height: auto; }
+/* two sections on the same ground share one gap, not two paddings */
+html main > section.section:not(.hero, [class*="ground-"]) + section.section:not([class*="ground-"]) { padding-top: 0; scroll-margin-top: var(--head-gap); }
+/* a page with no hero (film.html): its first section's words start under the header like a hero's */
+html main > section.section:first-child { padding-top: calc(var(--nav) + var(--hgap)); }
+
+/* hero: the words and the charge panel on the page ground at left, the video poster at right (span-6
+   start-7, the page's split line at x 732), one composition on one screen. The panel's foot and the
+   poster's foot share the hero's last line. */
+.fd-hero .hero__grid { grid-template-rows: auto minmax(0, 1fr); align-content: stretch; row-gap: var(--head-gap); }
+.fd-hero .hero__text { grid-column: 1 / span 6; grid-row: 1; }
+.fd-hero .hero__text > * + * { margin-top: var(--fd-gap); }
+.fd-hero .hero__text > .btn-row { margin-top: var(--fd-gap); }
+.fd-hero .hero__lead { max-width: 52ch; }
+.fd-hero .hero__media { grid-column: 7 / -1; grid-row: 1 / span 2; height: 100%; }
+.fd-hero .charge { grid-column: 1 / span 6; grid-row: 2; align-self: end; }
+/* the kit's film hero sets a black, flex frame and a relative play control; here the control sits on the poster */
+.fd-hero .hero__media { display: block; min-height: 0; }
+.fd-hero .ly-play { position: absolute; left: var(--s-6); bottom: var(--s-6); }
+.fd-hero .ly-play__label { padding: var(--s-3) var(--s-4); border-radius: var(--r-md); background: var(--p-inv-bg); color: var(--p-inv-ink); }
+.fd-hero .ly-play__label small { color: var(--p-inv-muted); }
+@media (max-width: 1023px) {
+  /* a tablet: the words across the top, then the panel beside the poster, the poster as tall as the
+     panel; the hero takes its content's height rather than leave a band above that row */
+  main > .hero.fd-hero { height: auto; min-height: 0; padding-bottom: 0; }
+  .fd-hero .hero__grid { display: grid; grid-template-rows: auto auto; }
+  .fd-hero .hero__text { grid-column: 1 / -1; }
+  .fd-hero .charge { grid-column: 1 / span 6; grid-row: 2; align-self: end; }
+  .fd-hero .hero__media { grid-column: 7 / -1; grid-row: 2; height: auto; min-height: 300px; margin: 0; }
+}
+@media (max-width: 639px) {
+  /* a phone: the words, the poster, the panel; the hero grows past the screen if it has to */
+  main > .hero.fd-hero { min-height: 100svh; padding-bottom: calc(var(--hpadb) + var(--bar)); }
+  .fd-hero .hero__grid { display: flex; flex-direction: column; align-items: stretch; row-gap: var(--s-5); }
+  .fd-hero .hero__media { flex: none; height: 200px; min-height: 0; }
+  .fd-hero h1 { font-size: 34px; }
+  .fd-hero .hero__lead { font-size: 16px; line-height: 1.5; }
+  .fd-hero .hero__text > .btn-row { margin-top: var(--s-5); }
+  .fd-hero .ly-play { left: var(--s-4); bottom: var(--s-4); }
+}
+
+/* the charge panel: a quiet surface in the page's own colours */
 .charge {
-  width: 100%; padding: var(--s-6); border-radius: var(--r-md);
-  background: var(--p-inv-bg); color: var(--p-inv-ink);
+  width: 100%; padding: var(--s-4) var(--s-6); border-radius: var(--r-md);
+  background: var(--p-surface); color: var(--p-ink);
 }
 .charge p { margin: 0; }
 .charge__top { display: flex; align-items: end; justify-content: space-between; gap: var(--s-4); }
 .charge__raised { display: grid; gap: var(--s-1); }
-.charge__label, .charge__facts dt { font: 500 var(--t-label)/1.3 var(--font-text); color: var(--p-inv-muted); }
+.charge__label, .charge__facts dt { font: 500 var(--t-label)/1.3 var(--font-text); color: var(--p-muted); }
 .charge__sum { font: var(--display-weight) 36px/1 var(--font-display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.charge__pct { font: 500 var(--t-small)/1.3 var(--font-text); color: var(--p-inv-ink); white-space: nowrap; padding-bottom: 4px; }
-.charge__facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); margin: 0; }
+.charge__pct { font: 500 var(--t-small)/1.3 var(--font-text); white-space: nowrap; padding-bottom: 4px; }
+.charge__foot { display: flex; align-items: end; justify-content: space-between; gap: var(--s-3) var(--s-5); flex-wrap: wrap; }
+.charge__facts { display: flex; gap: var(--s-7); margin: 0; }
 .charge__facts div { display: grid; gap: 2px; }
 .charge__facts dd { margin: 0; font: 500 18px/1.3 var(--font-text); font-variant-numeric: tabular-nums; }
-.charge__link { margin-top: var(--s-3); color: var(--p-inv-ink); font-size: var(--t-small); }
-.charge__note { margin-top: var(--s-4) !important; padding-top: var(--s-3); border-top: 1px solid color-mix(in oklab, var(--p-inv-ink) 14%, transparent);
-                font: 400 var(--t-label)/1.45 var(--font-text); color: var(--p-inv-muted); }
+.charge__link { font-size: var(--t-small); }
+.charge__note { margin-top: var(--s-3) !important; padding-top: var(--s-3); border-top: 1px solid var(--line);
+                font: 400 var(--t-label)/1.45 var(--font-text); color: var(--p-muted); }
 
 /* the battery: a cell with a terminal cap, ten cell lines over the charge; the charge fills once on load */
 .battery {
-  position: relative; height: 30px; margin: var(--s-4) 8px var(--s-4) 0; padding: 3px;
-  border: 2px solid color-mix(in oklab, var(--p-inv-ink) 60%, transparent); border-radius: 8px;
+  position: relative; height: 28px; margin: var(--s-3) 8px var(--s-3) 0; padding: 3px;
+  border: 2px solid color-mix(in oklab, var(--p-ink) 55%, transparent); border-radius: 8px;
 }
 .battery::after {
   content: ""; position: absolute; right: -9px; top: 50%; width: 5px; height: 12px; transform: translateY(-50%);
-  border-radius: 0 3px 3px 0; background: color-mix(in oklab, var(--p-inv-ink) 60%, transparent);
+  border-radius: 0 3px 3px 0; background: color-mix(in oklab, var(--p-ink) 55%, transparent);
 }
 .battery::before {
   content: ""; position: absolute; inset: 3px; z-index: 1; border-radius: 4px; pointer-events: none;
-  background: repeating-linear-gradient(90deg, transparent 0 calc(10% - 2px), var(--p-inv-bg) calc(10% - 2px) 10%);
+  background: repeating-linear-gradient(90deg, transparent 0 calc(10% - 2px), var(--p-surface) calc(10% - 2px) 10%);
 }
 .battery__fill {
-  display: block; height: 100%; border-radius: 4px; background: #b7c4a3;
+  display: block; height: 100%; border-radius: 4px; background: var(--p-accent);
   transform-origin: left center; transform: scaleX(var(--target, .365));
   animation: fd-charge 1.8s cubic-bezier(.22, 1, .36, 1) .5s backwards;
 }
 @keyframes fd-charge { from { transform: scaleX(0); } }
-
-@media (max-width: 1023px) {
-  .hero-side { width: auto; justify-items: stretch; }
-  .hero-side .ly-play { justify-self: start; }
-}
+@media (prefers-reduced-motion: reduce) { .battery__fill { animation: none; } }
 @media (max-width: 639px) {
-  .hero--film h1 { font-size: 32px; }
-  .hero--film .hero__lead { font-size: 16px; line-height: 1.4; margin-top: var(--s-2); }
-  .hero__over .btn-row { margin-top: var(--s-4); }
-  .hero-side { gap: var(--s-3); }
   .charge { padding: var(--s-4) var(--s-5); }
   .charge__sum { font-size: 30px; }
   .battery { height: 24px; margin-block: var(--s-3); }
-  .charge__note { margin-top: var(--s-2) !important; padding-top: var(--s-2); }
-  .charge__link { margin-top: var(--s-2); }
+  .charge__facts { gap: var(--s-6); }
   .charge__facts dd { font-size: 16px; }
+  .charge__note { margin-top: var(--s-3) !important; }
 }
 
 /* film cards: a linked card, the stand-in key visual left, the words right */
@@ -87,7 +124,15 @@
 .film__more { margin-top: auto; display: inline-flex; align-items: center; gap: var(--s-2); font-weight: 500; }
 .film__more::after { content: "\2192"; transition: transform var(--m-in, 150ms) var(--ease); }
 .film:hover .film__more::after { transform: translateX(3px); }
-@media (max-width: 1023px) { .films > .film { grid-column: 1 / -1; } }
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* a tablet: two-up tiles, the picture over the words, so ten films take five rows */
+  .films { row-gap: var(--head-gap); }
+  .films > .film { grid-column: auto / span 6; }
+  .film { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); min-height: 0; align-content: start; }
+  .film__media { height: 220px; }
+  .film h3 { font-size: 24px; }
+  .film__more { margin-top: var(--s-3); }
+}
 @media (max-width: 639px) {
   /* a phone: two-up tiles on the 165 columns, the picture over the words */
   .films { row-gap: var(--s-5); }
@@ -102,16 +147,17 @@
   .film__more { display: none; }
 }
 
-/* the statement (word-highlight) */
-#kapec .t-label { color: var(--muted); margin-bottom: var(--s-6); }
-
-/* about, on the dark band; the developing photograph beside it */
-.about h3 { margin-top: var(--s-7); font: var(--display-weight) var(--t-h3)/1.2 var(--font-display); letter-spacing: -0.015em; }
+/* par mums, on the dark band: the statement (word-highlight) leads, then the about text beside the
+   developing photograph */
+.fd-why { margin-bottom: var(--fd-sec); }
+.fd-why .t-label { color: var(--muted); margin-bottom: var(--fd-gap); }
+.about h3 { margin-top: var(--head-gap); font: var(--display-weight) var(--t-h3)/1.2 var(--font-display); letter-spacing: -0.015em; }
 .about .t-lead { margin-top: var(--s-5); }
 .about p:not(.t-lead) { margin-top: var(--s-4); font-size: 18px; line-height: 1.6; max-width: 56ch; }
-.develop { margin: 0; border-radius: var(--r-lg); overflow: hidden; height: min(560px, var(--ly-fit, 560px)); }
+.develop { margin: 0; border-radius: var(--r-lg); overflow: hidden; height: 100%; min-height: 400px; }
 .develop > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-@media (max-width: 1023px) { .develop { height: auto; aspect-ratio: 4 / 3; margin-top: var(--s-7); } }
+#par-mums .grid { align-items: stretch; }
+@media (max-width: 1023px) { .develop { height: auto; min-height: 0; aspect-ratio: 4 / 3; margin-top: var(--head-gap); } }
 
 /* donation form */
 .donate { display: grid; gap: var(--s-5); padding: var(--s-7); border-radius: var(--r-lg); background: var(--p-surface); align-content: start; }
@@ -173,12 +219,23 @@
 .supporters { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--s-5); }
 .supporters li { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid var(--line); font-size: 18px; }
 .supporters li.is-anon { color: var(--muted); }
+#atbalstitaji .grid { align-items: stretch; }
+.supporters__photo { height: 100%; min-height: 320px; }
+.supporters__photo .frame__img { object-position: 50% 40%; }
+@media (max-width: 1023px) { .supporters__photo { height: auto; min-height: 0; aspect-ratio: 16 / 9; margin-top: var(--head-gap); } }
 
 /* footer */
 .footer__col h3 { font: 500 var(--t-small)/1.4 var(--font-text); color: var(--muted); margin-bottom: var(--s-3); }
 .footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
 .footer__col a:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* the close and the footer: the head row, the photograph at a set height, then the links; the legal row
+   closes the page a step tighter */
+html footer.closing { padding-bottom: var(--s-6); }
+html footer.closing > .wrap { grid-template-rows: auto auto; row-gap: var(--fd-sec); }
+.closing__cta { gap: var(--head-gap); }
+.closing__cta > .close__media { flex: none; height: 360px; }
 .close__media img { object-position: 50% 60%; }
+@media (max-width: 639px) { .closing__cta > .close__media { height: 200px; min-height: 0; } }
 
 /* the video dialog (facade: the real build loads youtube-nocookie here on click) */
 .video { background: var(--p-inv-bg); color: var(--p-inv-ink); border-radius: var(--r-lg); overflow: hidden; }
@@ -188,10 +245,7 @@
 .video__frame { position: relative; aspect-ratio: 16 / 9; background: #000; }
 .video__frame img { width: 100%; height: 100%; object-fit: cover; opacity: .6; }
 .video__frame .ly-play__disc { position: absolute; inset: 0; margin: auto; }
-@media (max-width: 639px) {
-  .charge__link { display: none; }
-  .develop { aspect-ratio: 16 / 9; margin-top: var(--s-6); }
-}
+@media (max-width: 639px) { .develop { aspect-ratio: 16 / 9; } }
 
 /* film page */
 .film-head__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-4); }
@@ -210,15 +264,5 @@
 .team { list-style: none; margin: var(--s-5) 0 0; padding: 0; }
 .team li { min-height: 56px; display: flex; align-items: center; border-bottom: 1px solid var(--line); font-size: 18px; }
 @media (max-width: 1023px) { .film-head .frame--fill { min-height: 260px; } }
-/* the film page is a short reading page: its first two sections take their content's height */
-html.film-page main > section:not(#ziedot) { height: auto; min-height: 0; display: block; }
-html.film-page main > section:not(#ziedot) > .wrap { height: auto; }
-html.film-page .film-head { padding-bottom: var(--s-9); }
 html.film-page .film-head .frame--fill { height: 520px; }
-html.film-page #komanda { padding-top: var(--s-9); padding-bottom: var(--s-9); background: var(--p-surface); }
 @media (max-width: 1023px) { html.film-page .film-head .frame--fill { height: auto; aspect-ratio: 4 / 3; } }
-/* a tablet: the play control and the charge panel share one row under the box */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .hero-side { grid-template-columns: auto minmax(0, 400px); justify-content: space-between; align-items: end; }
-  .hero-side .ly-play { align-self: end; }
-}

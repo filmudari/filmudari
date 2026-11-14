@@ -46,10 +46,11 @@
 </head>
 <body>
 <!-- type: service (site-kind other)
-     deal: hero film, palette three-stones, type literata (Literata / Figtree), nav nav-centre, close close-photo,
+     deal: hero film (reworked to a split: words and charge panel left, the video poster right), palette three-stones, type literata (Literata / Figtree), nav nav-centre, close close-photo,
      footer footer-dark, rhythm dark-band (#par-mums), buttons arrow, mark dots (replaced by the client's wordmark)
-     moments: word-highlight in #kapec (the campaign's reason lights up as it is read),
+     moments: word-highlight leading #par-mums (the campaign's reason lights up as it is read),
               picture-develops in #par-mums (the camera comes up like a print in the tray)
+     rhythm: sections take their content's height, padded --fd-sec (f.css), not one screen each
      stand-in photographs (Wikimedia Commons, live search): every frame is replaced by the client's material in January -->
 
 <header class="nav nav--centre">
@@ -72,164 +73,154 @@
 </header>
 
 <main id="top">
-  <!-- HERO (film): the project video's poster fills the frame; the play control opens dialog#video (facade:
-       the real build loads youtube-nocookie on click). Poster: stand-in photograph f163857676. -->
-  <section class="hero hero--film" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text hero__in">
-      <div class="hero__media hero__fill">
-        <img src="assets/img/photo-f163857676.webp" srcset="assets/img/photo-f163857676-500.webp 500w, assets/img/photo-f163857676-960.webp 960w, assets/img/photo-f163857676-1280.webp 1280w, assets/img/photo-f163857676.webp 1600w" sizes="(max-width: 639px) 1000px, 1280px" width="1600" height="1203" alt="Tukša kinozāle ar sarkaniem krēsliem" style="--ly-pos: 50% 30%; --ly-pos-phone: 62% 50%" fetchpriority="high" decoding="async" data-source="stand-in" data-subject="hero poster">
-        <div class="hero__over">
-          <div>
-            <h1 id="hero-h">10&nbsp;filmas. 10&nbsp;stāsti. Viens kopīgs sākums.</h1>
-            <p class="hero__lead">Latvijas Kultūras akadēmijas audiovizuālās mākslas 2. kursa studenti gatavojas uzņemt desmit īsfilmas. Idejas ir, komandas ir, apņēmība ir — trūkst līdzekļu, lai stāsti nonāktu uz ekrāna. Ar tavu atbalstu tas izdosies.</p>
-            <div class="btn-row"><a class="btn btn--primary" href="#ziedot">ZIEDOT<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a></div>
-          </div>
-          <div class="hero-side">
-            <a class="ly-play" href="#video" data-video-open>
-              <span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span>
-              <span class="ly-play__label">Atskaņot video<small>Iepazīsti projektu</small></span>
-            </a>
-            <div class="charge">
-              <div class="charge__top">
-                <p class="charge__raised"><span class="charge__label">Saziedots</span><span class="charge__sum">4 380 €</span></p>
-                <p class="charge__pct">36,5 % no mērķa</p>
-              </div>
-              <div class="battery" data-progress style="--target: .365"><span class="battery__fill"></span></div>
-              <dl class="charge__facts">
-                <div><dt>Mērķis</dt><dd>12 000 €</dd></div>
-                <div><dt>Vēl trūkst</dt><dd>7 620 €</dd></div>
-              </dl>
-              <p class="charge__note">Joslā redzami tikai saņemtie un pārbaudītie ziedojumi.</p>
-              <a class="link charge__link" href="#ziedot">Vēlies ziedot ar pārskaitījumu?</a>
-            </div>
-          </div>
+  <!-- HERO (film, laid out as a split): the words and the charge panel on the page ground at left, the project video's poster at right;
+       the play control opens dialog#video (facade: the real build loads youtube-nocookie on click).
+       Poster: stand-in photograph f163857676. -->
+  <section class="hero hero--film fd-hero" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero__grid">
+      <div class="hero__text">
+        <h1 id="hero-h">10&nbsp;filmas. 10&nbsp;stāsti. Viens kopīgs sākums.</h1>
+        <p class="hero__lead">Latvijas Kultūras akadēmijas audiovizuālās mākslas 2. kursa studenti gatavojas uzņemt desmit īsfilmas. Idejas ir, komandas ir, apņēmība ir — trūkst līdzekļu, lai stāsti nonāktu uz ekrāna. Ar tavu atbalstu tas izdosies.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="#ziedot">ZIEDOT<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a></div>
+      </div>
+      <div class="hero__media">
+        <img src="assets/img/photo-f163857676.webp" srcset="assets/img/photo-f163857676-500.webp 500w, assets/img/photo-f163857676-960.webp 960w, assets/img/photo-f163857676-1280.webp 1280w, assets/img/photo-f163857676.webp 1600w" sizes="(max-width: 1023px) 100vw, 960px" width="1600" height="1203" alt="Tukša kinozāle ar sarkaniem krēsliem" style="--ly-pos: 50% 40%; --ly-pos-phone: 62% 50%" fetchpriority="high" decoding="async" data-source="stand-in" data-subject="hero poster">
+        <a class="ly-play" href="#video" data-video-open>
+          <span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span>
+          <span class="ly-play__label">Atskaņot video<small>Iepazīsti projektu</small></span>
+        </a>
+      </div>
+      <div class="charge">
+        <div class="charge__top">
+          <p class="charge__raised"><span class="charge__label">Saziedots</span><span class="charge__sum">4 380 €</span></p>
+          <p class="charge__pct">36,5 % no mērķa</p>
         </div>
+        <div class="battery" data-progress style="--target: .365"><span class="battery__fill"></span></div>
+        <div class="charge__foot">
+          <dl class="charge__facts">
+            <div><dt>Mērķis</dt><dd>12 000 €</dd></div>
+            <div><dt>Vēl trūkst</dt><dd>7 620 €</dd></div>
+          </dl>
+          <a class="link charge__link" href="#ziedot">Vēlies ziedot ar pārskaitījumu?</a>
+        </div>
+        <p class="charge__note">Joslā redzami tikai saņemtie un pārbaudītie ziedojumi.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- FILMS: ten linked cards, two screens (.g2): row 1 the h2 and films 1 to 4, row 2 films 5 to 10.
-       Each card's picture is a stand-in place photograph for the film's key visual (January). -->
-  <section class="section g2" id="filmas" aria-labelledby="filmas-h">
+  <!-- FILMS: ten linked cards in one grid. Each card's picture is a stand-in place photograph for the
+       film's key visual (January). -->
+  <section class="section" id="filmas" aria-labelledby="filmas-h">
     <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="filmas-h">10 filmas — 10 stāsti</h2>
-          <p>Desmit komandas, desmit idejas. Iepazīsti katru no tām.</p>
-        </div>
-        <div class="grid films">
-          <!--FILMS:1-4-->
-          <a class="film span-6" href="film.html?n=1" style="--film: #FF48B0">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f84836658-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 01"></span>
-            <span class="film__body">
-              <span class="film__num">01</span>
-              <h3>Pēdējais vilciens</h3>
-              <p>Nakts stacijā satiekas divi svešinieki, kuriem abiem nav, kur palikt.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=2" style="--film: #0078BF">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f153855336-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 02"></span>
-            <span class="film__body">
-              <span class="film__num">02</span>
-              <h3>Sāls</h3>
-              <p>Zvejnieka meita mēģina saglabāt tēva laivu.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=3" style="--film: #FFB511">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f146121088-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 03"></span>
-            <span class="film__body">
-              <span class="film__num">03</span>
-              <h3>Klusums pēc</h3>
-              <p>Ģimene pirmo reizi pēc bērēm sanāk pie viena galda.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=4" style="--film: #00A95C">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f38788172-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 04"></span>
-            <span class="film__body">
-              <span class="film__num">04</span>
-              <h3>Ziemas dārzs</h3>
-              <p>Vecs vīrs katru dienu kopj dārzu, kurā nekas neaug.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <!--/FILMS-->
-        </div>
+      <div class="section-head">
+        <h2 id="filmas-h">10 filmas — 10 stāsti</h2>
+        <p>Desmit komandas, desmit idejas. Iepazīsti katru no tām.</p>
       </div>
       <div class="grid films">
-        <!--FILMS:5-10-->
-          <a class="film span-6" href="film.html?n=5" style="--film: #FF6C2F">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f29988865-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 05"></span>
-            <span class="film__body">
-              <span class="film__num">05</span>
-              <h3>Mežs ir tuvu</h3>
-              <p>Divi brāļi pazaudē ceļu mežā, kuru abi pazina no bērnības.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=6" style="--film: #5EC8E5">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f50291800-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" style="object-position: 80% 50%" data-source="stand-in" data-subject="film 06"></span>
-            <span class="film__body">
-              <span class="film__num">06</span>
-              <h3>Nakts maiņa</h3>
-              <p>Viena nakts slimnīcas uzgaidāmajā telpā.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=7" style="--film: #E4002B">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f201947391-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" style="object-position: 50% 35%" data-source="stand-in" data-subject="film 07"></span>
-            <span class="film__body">
-              <span class="film__num">07</span>
-              <h3>Spogulis</h3>
-              <p>Aktrise gatavojas lomai, kas pārāk līdzinās viņas dzīvei.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=8" style="--film: #9D7AD2">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f18531604-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 08"></span>
-            <span class="film__body">
-              <span class="film__num">08</span>
-              <h3>Atpakaļceļš</h3>
-              <p>Meitene atgriežas dzimtajā pilsētā pēc desmit gadiem.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=9" style="--film: #00838A">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f57206114-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 09"></span>
-            <span class="film__body">
-              <span class="film__num">09</span>
-              <h3>Vējš no jūras</h3>
-              <p>Vasara kūrortā, kurā vairs neviens nebrauc.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <a class="film span-6" href="film.html?n=10" style="--film: #F7A1C4">
-            <span class="film__media"><img class="frame__img" src="assets/img/photo-f141373292-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 10"></span>
-            <span class="film__body">
-              <span class="film__num">10</span>
-              <h3>Pirmais sniegs</h3>
-              <p>Bērnības draugi satiekas reizi gadā, kad uzsnieg pirmais sniegs.</p>
-              <span class="film__more">Uzzināt vairāk</span>
-            </span>
-          </a>
-          <!--/FILMS-->
+        <!--FILMS:1-10-->
+        <a class="film span-6" href="film.html?n=1" style="--film: #FF48B0">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f84836658-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 01"></span>
+          <span class="film__body">
+            <span class="film__num">01</span>
+            <h3>Pēdējais vilciens</h3>
+            <p>Nakts stacijā satiekas divi svešinieki, kuriem abiem nav, kur palikt.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=2" style="--film: #0078BF">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f153855336-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 02"></span>
+          <span class="film__body">
+            <span class="film__num">02</span>
+            <h3>Sāls</h3>
+            <p>Zvejnieka meita mēģina saglabāt tēva laivu.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=3" style="--film: #FFB511">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f146121088-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 03"></span>
+          <span class="film__body">
+            <span class="film__num">03</span>
+            <h3>Klusums pēc</h3>
+            <p>Ģimene pirmo reizi pēc bērēm sanāk pie viena galda.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=4" style="--film: #00A95C">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f38788172-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 04"></span>
+          <span class="film__body">
+            <span class="film__num">04</span>
+            <h3>Ziemas dārzs</h3>
+            <p>Vecs vīrs katru dienu kopj dārzu, kurā nekas neaug.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=5" style="--film: #FF6C2F">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f29988865-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 05"></span>
+          <span class="film__body">
+            <span class="film__num">05</span>
+            <h3>Mežs ir tuvu</h3>
+            <p>Divi brāļi pazaudē ceļu mežā, kuru abi pazina no bērnības.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=6" style="--film: #5EC8E5">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f50291800-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" style="object-position: 80% 50%" data-source="stand-in" data-subject="film 06"></span>
+          <span class="film__body">
+            <span class="film__num">06</span>
+            <h3>Nakts maiņa</h3>
+            <p>Viena nakts slimnīcas uzgaidāmajā telpā.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=7" style="--film: #E4002B">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f201947391-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" style="object-position: 50% 35%" data-source="stand-in" data-subject="film 07"></span>
+          <span class="film__body">
+            <span class="film__num">07</span>
+            <h3>Spogulis</h3>
+            <p>Aktrise gatavojas lomai, kas pārāk līdzinās viņas dzīvei.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=8" style="--film: #9D7AD2">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f18531604-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 08"></span>
+          <span class="film__body">
+            <span class="film__num">08</span>
+            <h3>Atpakaļceļš</h3>
+            <p>Meitene atgriežas dzimtajā pilsētā pēc desmit gadiem.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=9" style="--film: #00838A">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f57206114-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 09"></span>
+          <span class="film__body">
+            <span class="film__num">09</span>
+            <h3>Vējš no jūras</h3>
+            <p>Vasara kūrortā, kurā vairs neviens nebrauc.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <a class="film span-6" href="film.html?n=10" style="--film: #F7A1C4">
+          <span class="film__media"><img class="frame__img" src="assets/img/photo-f141373292-500.webp" alt="" width="500" height="375" loading="lazy" decoding="async" data-source="stand-in" data-subject="film 10"></span>
+          <span class="film__body">
+            <span class="film__num">10</span>
+            <h3>Pirmais sniegs</h3>
+            <p>Bērnības draugi satiekas reizi gadā, kad uzsnieg pirmais sniegs.</p>
+            <span class="film__more">Uzzināt vairāk</span>
+          </span>
+        </a>
+        <!--/FILMS-->
       </div>
     </div>
   </section>
 
-  <!-- word-highlight: the reason for the campaign, one statement in its own section -->
-  <section class="section statement" id="kapec" data-moment="word-highlight" aria-label="Kāpēc tas ir svarīgi?">
-    <div class="wrap">
-      <p class="t-label">Kāpēc tas ir svarīgi?</p>
-      <p class="mo-wh__text">Katrs Latvijas kino vārds, ko šodien zinām, kādreiz sāka ar pirmo īsfilmu. Atbalstot studentus tagad, tu palīdzi izaugt <strong>nākamajai paaudzei</strong>, kas stāstīs mūsu stāstus uz lielā ekrāna.</p>
-    </div>
-  </section>
-
-  <!-- PAR MUMS on the dark band; picture-develops on the camera (stand-in f79495777) -->
+  <!-- PAR MUMS on the dark band: the campaign's reason leads (word-highlight lights it up as it is read),
+       then who we are beside the camera (picture-develops; stand-in f79495777) -->
   <section class="section ground-inverse" id="par-mums" aria-labelledby="par-mums-h">
     <div class="wrap">
+      <div class="fd-why" data-moment="word-highlight">
+        <p class="t-label">Kāpēc tas ir svarīgi?</p>
+        <p class="mo-wh__text">Katrs Latvijas kino vārds, ko šodien zinām, kādreiz sāka ar pirmo īsfilmu. Atbalstot studentus tagad, tu palīdzi izaugt <strong>nākamajai paaudzei</strong>, kas stāstīs mūsu stāstus uz lielā ekrāna.</p>
+      </div>
       <div class="grid grid--top">
         <div class="span-6 about">
           <h2 id="par-mums-h">Kas ir FilmuDari?</h2>
@@ -295,7 +286,7 @@
   <!-- SUPPORTERS: names from content.js beside a stand-in photograph (f123421223) -->
   <section class="section" id="atbalstitaji" aria-labelledby="atbalstitaji-h">
     <div class="wrap">
-      <div class="grid grid--top fill">
+      <div class="grid grid--top">
         <div class="span-6">
           <div class="section-head"><h2 id="atbalstitaji-h">Mūs jau atbalsta</h2></div>
           <ul class="supporters">
@@ -315,7 +306,7 @@
             <!--/SUPPORTERS-->
           </ul>
         </div>
-        <div class="frame frame--photo frame--fill span-6 start-7">
+        <div class="frame frame--photo supporters__photo span-6 start-7">
           <img class="frame__img" src="assets/img/photo-f123421223-960.webp" srcset="assets/img/photo-f123421223-500.webp 500w, assets/img/photo-f123421223-960.webp 960w" sizes="(max-width: 1023px) 100vw, 628px" width="960" height="1280" alt="Kinoprojektors" loading="lazy" decoding="async" data-source="stand-in" data-subject="film projector">
         </div>
       </div>
