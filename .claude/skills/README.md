@@ -8,5 +8,6 @@ One design skill per prototype. Vendored as plain text (no scripts, no hooks).
 | B — Festivāla programma | `editorial` | https://github.com/bergside/awesome-design-skills/tree/main/skills/editorial (MIT) |
 | C — Plakāts | `riso` | https://github.com/bergside/awesome-design-skills/tree/main/skills/riso (MIT) |
 | D — Skicenes | `sketch` | https://github.com/bergside/awesome-design-skills/tree/main/skills/sketch (MIT). Font override: Shantell Sans (Delicious Handrawn misplaces Ķ Ļ Ņ cedillas) |
+| E — (world chosen by the skill) | `impeccable` 4.9.1 | https://github.com/pbakaus/impeccable (Apache 2.0). Launcher fetches a sha256-pinned engine from the repo's GitHub releases into ~/.impeccable |
 
 `docs/design-directions.md` and `CLAUDE.md` win over any skill default (palette, fonts) where they conflict.
