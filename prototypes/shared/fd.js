@@ -54,7 +54,11 @@
     const film = FD.films.find((f) => f.n === n) ?? FD.films[0];
     document.documentElement.style.setProperty("--accent", film.accent);
     document.title = film.title + " · FilmuDari";
-    fill(document, filmFields(film));
+    // Skip [data-render] lists so other films' cards keep their own fields.
+    document.querySelectorAll("[data-f]").forEach((el) => {
+      const v = filmFields(film)[el.dataset.f];
+      if (v !== undefined && !el.closest("[data-render]")) el.textContent = v;
+    });
   }
 
   // Progress battery: [data-progress] gets --fill (0..1) after first paint; numbers count up.

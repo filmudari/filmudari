@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FilmuDari · 10 filmas. 10 stāsti.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Sofia+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="../shared/fd.css">
+  <link rel="stylesheet" href="kinozale.css">
+</head>
+<body>
+  <a class="skip" href="#saturs">Pāriet uz saturu</a>
+
+  <section class="hall" aria-label="FilmuDari">
+    <header class="bar">
+      <a class="bar-home" href="#"><span class="fd-logo" role="img" aria-label="FilmuDari"></span></a>
+      <nav class="bar-nav" aria-label="Galvenā">
+        <button type="button" class="bar-link" data-video-open>Skatīties video</button>
+        <a class="btn btn-light btn-small" href="#ziedot">ZIEDOT</a>
+      </nav>
+    </header>
+
+    <div class="hall-room" id="saturs">
+      <div class="screen">
+        <div class="title-card">
+          <h1><span>10 filmas. 10 stāsti.</span> <span>Viens kopīgs sākums.</span></h1>
+        </div>
+        <h2 class="subtitle">Iepazīsti projektu</h2>
+        <button type="button" class="screen-play" data-video-open>
+          <span class="leader-wrap"><span class="leader-text">Atskaņot video</span><span class="leader" aria-hidden="true"></span></span>
+        </button>
+      </div>
+
+      <div class="front-row">
+        <p class="intro">Latvijas Kultūras akadēmijas audiovizuālās mākslas 2. kursa studenti gatavojas uzņemt desmit īsfilmas. Idejas ir, komandas ir, apņēmība ir — trūkst līdzekļu, lai stāsti nonāktu uz ekrāna. Ar tavu atbalstu tas izdosies.</p>
+
+        <div class="beam">
+          <div class="beam-figs">
+            <div><span class="beam-label">Saziedots</span><span class="beam-raised" data-num="raised">4 380 €</span></div>
+            <span class="beam-pct"><span data-num="percent">36,5 %</span> no mērķa</span>
+          </div>
+          <div class="battery" data-progress>
+            <div class="battery-cell"><div class="fd-fill"></div></div>
+            <div class="battery-cap" aria-hidden="true"></div>
+          </div>
+          <div class="beam-meta">
+            <span>Mērķis: <b data-num="goal">12 000 €</b></span>
+            <span>Vēl trūkst <b data-num="remaining">7 620 €</b></span>
+          </div>
+          <p class="fine">Joslā redzami tikai saņemtie un pārbaudītie ziedojumi.</p>
+        </div>
+
+        <a class="btn btn-light" href="#ziedot">ZIEDOT</a>
+      </div>
+    </div>
+    <div class="bar bar-bottom" aria-hidden="true"></div>
+  </section>
+
+  <main>
+    <section class="section" id="par-mums" aria-labelledby="par-h">
+      <div class="wrap intertitles">
+        <div class="lead-block">
+          <h2 class="h2" id="par-h">Kas ir FilmuDari?</h2>
+          <p>FilmuDari ir biedrība, kas atbalsta jaunos Latvijas kino veidotājus ceļā no idejas līdz gatavai filmai.</p>
+        </div>
+        <div class="why">
+          <h3 class="h3">Kāpēc šī kampaņa?</h3>
+          <p>Studentu kursa darbi ir pirmā reize, kad jaunie režisori, operatori, montāžas režisori un producenti strādā kā īsta filmēšanas komanda. Akadēmija dod zināšanas, bet filmēšanai vajag tehniku, lokācijas, transportu un aktierus — un tas maksā. Šī kampaņa palīdz desmit komandām savas idejas īstenot pilnvērtīgi.</p>
+        </div>
+        <div class="why">
+          <h3 class="h3">Kāpēc tas ir svarīgi?</h3>
+          <p>Katrs Latvijas kino vārds, ko šodien zinām, kādreiz sāka ar pirmo īsfilmu. Atbalstot studentus tagad, tu palīdzi izaugt nākamajai paaudzei, kas stāstīs mūsu stāstus uz lielā ekrāna.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="filmas" aria-labelledby="filmas-h" style="padding-top:0">
+      <div class="wrap">
+        <div class="reel-head">
+          <div>
+            <h2 class="h2" id="filmas-h">10 filmas — 10 stāsti</h2>
+            <p class="lede">Desmit komandas, desmit idejas. Iepazīsti katru no tām.</p>
+          </div>
+          <div class="reel-ctrl">
+            <button type="button" class="reel-btn" data-reel="-1" aria-label="Iepriekšējās filmas" aria-controls="reel">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6"/></svg>
+            </button>
+            <button type="button" class="reel-btn" data-reel="1" aria-label="Nākamās filmas" aria-controls="reel">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7.5 4 6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="reel-viewport">
+        <ul class="reel" id="reel" data-render="films" data-template="#film-tpl" tabindex="0" aria-labelledby="filmas-h"></ul>
+      </div>
+      <template id="film-tpl">
+        <li>
+          <article class="film-card">
+            <div class="film-frame" aria-hidden="true"></div>
+            <h3 data-f="title"></h3>
+            <p data-f="idea"></p>
+            <a class="film-link" data-href>Uzzināt vairāk<span class="sr-only">: <span data-f="title"></span></span></a>
+          </article>
+        </li>
+      </template>
+    </section>
+
+    <section class="section" id="ziedot" aria-labelledby="ziedot-h" style="padding-top:0">
+      <div class="wrap">
+        <h2 class="h2" id="ziedot-h">Atbalsti jauno Latvijas kino</h2>
+        <div class="ticket">
+          <form class="ticket-main" data-donate>
+            <fieldset>
+              <legend class="field-label">Izvēlies summu</legend>
+              <div class="amounts">
+                <button type="button" class="amount" data-amount="5" aria-pressed="false">5 €</button>
+                <button type="button" class="amount" data-amount="10" aria-pressed="false">10 €</button>
+                <button type="button" class="amount" data-amount="20" aria-pressed="true">20 €</button>
+                <button type="button" class="amount" data-amount="50" aria-pressed="false">50 €</button>
+                <button type="button" class="amount" data-amount="100" aria-pressed="false">100 €</button>
+              </div>
+            </fieldset>
+            <div class="ticket-grid">
+              <div>
+                <label class="field-label" for="custom">Cita summa (€)</label>
+                <input class="field tnum" id="custom" name="custom" inputmode="decimal" autocomplete="off" aria-describedby="min-hint">
+                <p class="hint" id="min-hint">Minimālā summa — 2 €</p>
+              </div>
+              <div>
+                <label class="field-label" for="donor">Tavs vārds (nav obligāti)</label>
+                <input class="field" id="donor" name="name" autocomplete="name">
+              </div>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="show">
+              <span>Rādīt manu vārdu atbalstītāju sarakstā<small>Ja vārdu nenorādīsi vai neatzīmēsi, ziedosi anonīmi.</small></span>
+            </label>
+            <div class="ticket-submit">
+              <button type="submit" class="btn btn-light"><span data-donate-label>Ziedot 20 €</span></button>
+              <p class="ticket-note">Ziedojums tiek ieskaitīts biedrības FilmuDari kontā, un visi līdzekļi tiek izlietoti 10 studentu filmu tapšanai.</p>
+              <p class="ticket-note">Maksājums notiek drošā maksājumu vidē ar tavas bankas vai kartes starpniecību.</p>
+            </div>
+          </form>
+
+          <aside class="ticket-stub" aria-labelledby="bank-h">
+            <h3 class="h3" id="bank-h">Vēlies ziedot ar pārskaitījumu?</h3>
+            <dl>
+              <div class="stub-row"><dt>Saņēmējs</dt><dd><span>Biedrība FilmuDari</span></dd></div>
+              <div class="stub-row"><dt>Reģ. nr.</dt><dd><span>[reģistrācijas numurs]</span></dd></div>
+              <div class="stub-row"><dt>Konts</dt><dd><span id="iban" class="tnum">LV00 HABA 0000 0000 0000 0</span><button type="button" class="copy-btn" data-copy="#iban" aria-label="Kopēt: Konts"><span class="fd-copy-label">Kopēt</span></button></dd></div>
+              <div class="stub-row"><dt>Banka</dt><dd><span>Swedbank (HABALV22)</span></dd></div>
+              <div class="stub-row"><dt>Maksājuma mērķis</dt><dd><span id="ref">Ziedojums FilmuDari</span><button type="button" class="copy-btn" data-copy="#ref" aria-label="Kopēt: Maksājuma mērķis"><span class="fd-copy-label">Kopēt</span></button></dd></div>
+            </dl>
+            <p class="ticket-note" style="margin-top:18px">Pārskaitījumi progresa joslā parādās pēc tam, kad esam tos pārbaudījuši — parasti 1–3 darba dienu laikā.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section credits" id="atbalsta" aria-labelledby="atbalsta-h" style="padding-top:0">
+      <div class="wrap">
+        <h2 class="h2" id="atbalsta-h">Mūs jau atbalsta</h2>
+        <ul class="credit-roll" data-render="supporters" data-template="#supporter-tpl"></ul>
+        <template id="supporter-tpl"><li data-f="name"></li></template>
+      </div>
+    </section>
+  </main>
+
+  <footer class="final" id="kontakti" aria-labelledby="kontakti-h">
+    <div class="wrap">
+      <h2 class="h2" id="kontakti-h">Sazinies ar mums</h2>
+      <div class="contacts">
+        <a href="mailto:darifilmu@gmail.com"><span>darifilmu@gmail.com</span></a>
+        <a href="tel:+37124922018"><span class="tnum">+371 24922018</span></a>
+        <a href="https://www.instagram.com/filmudari/"><span>@filmudari</span></a>
+        <a href="https://www.facebook.com/"><span>Filmu Dari</span></a>
+      </div>
+      <div class="footer">
+        <div>
+          <p>Biedrība FilmuDari · Reģ. nr. [..]</p>
+          <p>Mezgli, Cenu pagasts, Jelgavas novads, LV-3018</p>
+        </div>
+        <div>
+          <p>darifilmu@gmail.com · +371 24922018</p>
+          <a href="#">Privātuma politika</a>
+        </div>
+        <p>© 2026 FilmuDari. Visas tiesības aizsargātas.</p>
+      </div>
+    </div>
+    <div class="bar bar-bottom" aria-hidden="true"></div>
+  </footer>
+
+  <dialog id="video" aria-labelledby="video-h">
+    <h2 class="sr-only" id="video-h">Iepazīsti projektu</h2>
+    <button type="button" class="dialog-close" data-video-close>Aizvērt</button>
+    <div class="projection"><span class="leader" aria-hidden="true"></span></div>
+  </dialog>
+
+  <script src="../shared/content.js"></script>
+  <script src="../shared/fd.js"></script>
+  <script src="kinozale.js"></script>
+</body>
+</html>

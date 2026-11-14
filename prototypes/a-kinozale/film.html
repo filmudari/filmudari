@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FilmuDari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Sofia+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="../shared/fd.css">
+  <link rel="stylesheet" href="kinozale.css">
+</head>
+<body data-film-page>
+  <a class="skip" href="#saturs">Pāriet uz saturu</a>
+
+  <section class="hall film-hall" aria-labelledby="film-title" style="min-height:auto">
+    <header class="bar">
+      <a class="bar-home" href="index.html"><span class="fd-logo" role="img" aria-label="FilmuDari"></span></a>
+      <nav class="bar-nav" aria-label="Galvenā">
+        <a class="bar-link back" href="index.html#filmas" style="display:inline-flex">← Visas filmas</a>
+        <a class="btn btn-light btn-small" href="#ziedot">ZIEDOT</a>
+      </nav>
+    </header>
+    <div class="hall-room" id="saturs">
+      <div class="screen">
+        <div class="title-card"><h1 id="film-title" data-f="title"></h1></div>
+        <p class="subtitle" id="kv-note">Filmas vizuālais materiāls drīzumā.</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" style="padding-top:clamp(40px,6vw,72px)">
+      <div class="wrap film-body">
+        <div>
+          <div class="film-block">
+            <h2 class="film-label">Ideja</h2>
+            <p class="idea" data-f="idea"></p>
+          </div>
+          <div class="film-block">
+            <h2 class="film-label">Kāpēc šī filma?</h2>
+            <p class="why-text">[Komandas teksts par filmas tapšanas mērķi.]</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="film-label">Komanda</h2>
+          <dl class="team">
+            <div><dt>Režisors</dt><dd>[..]</dd></div>
+            <div><dt>Operators</dt><dd>[..]</dd></div>
+            <div><dt>Montāžas režisors</dt><dd>[..]</dd></div>
+            <div><dt>Producents</dt><dd>[..]</dd></div>
+          </dl>
+          <p class="support-line">Šo filmu atbalstījuši <b data-f="supporters"></b> ziedotāji · <b data-f="total"></b></p>
+          <a class="btn btn-light" href="#ziedot" style="margin-top:24px;width:100%">Atbalstīt filmu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ziedot" aria-labelledby="ziedot-h" style="padding-top:0">
+      <div class="wrap">
+        <h2 class="h2" id="ziedot-h">Atbalsti jauno Latvijas kino</h2>
+        <p class="film-note" data-f="note"></p>
+        <div class="ticket">
+          <form class="ticket-main" data-donate>
+            <fieldset>
+              <legend class="field-label">Izvēlies summu</legend>
+              <div class="amounts">
+                <button type="button" class="amount" data-amount="5" aria-pressed="false">5 €</button>
+                <button type="button" class="amount" data-amount="10" aria-pressed="false">10 €</button>
+                <button type="button" class="amount" data-amount="20" aria-pressed="true">20 €</button>
+                <button type="button" class="amount" data-amount="50" aria-pressed="false">50 €</button>
+                <button type="button" class="amount" data-amount="100" aria-pressed="false">100 €</button>
+              </div>
+            </fieldset>
+            <div class="ticket-grid">
+              <div>
+                <label class="field-label" for="custom">Cita summa (€)</label>
+                <input class="field tnum" id="custom" name="custom" inputmode="decimal" autocomplete="off" aria-describedby="min-hint">
+                <p class="hint" id="min-hint">Minimālā summa — 2 €</p>
+              </div>
+              <div>
+                <label class="field-label" for="donor">Tavs vārds (nav obligāti)</label>
+                <input class="field" id="donor" name="name" autocomplete="name">
+              </div>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="show">
+              <span>Rādīt manu vārdu atbalstītāju sarakstā<small>Ja vārdu nenorādīsi vai neatzīmēsi, ziedosi anonīmi.</small></span>
+            </label>
+            <div class="ticket-submit">
+              <button type="submit" class="btn btn-light"><span data-donate-label>Ziedot 20 €</span></button>
+              <p class="ticket-note">Ziedojums tiek ieskaitīts biedrības FilmuDari kontā, un visi līdzekļi tiek izlietoti 10 studentu filmu tapšanai.</p>
+              <p class="ticket-note">Maksājums notiek drošā maksājumu vidē ar tavas bankas vai kartes starpniecību.</p>
+            </div>
+          </form>
+
+          <aside class="ticket-stub" aria-labelledby="bank-h">
+            <h3 class="h3" id="bank-h">Vēlies ziedot ar pārskaitījumu?</h3>
+            <dl>
+              <div class="stub-row"><dt>Saņēmējs</dt><dd><span>Biedrība FilmuDari</span></dd></div>
+              <div class="stub-row"><dt>Reģ. nr.</dt><dd><span>[reģistrācijas numurs]</span></dd></div>
+              <div class="stub-row"><dt>Konts</dt><dd><span id="iban" class="tnum">LV00 HABA 0000 0000 0000 0</span><button type="button" class="copy-btn" data-copy="#iban" aria-label="Kopēt: Konts"><span class="fd-copy-label">Kopēt</span></button></dd></div>
+              <div class="stub-row"><dt>Banka</dt><dd><span>Swedbank (HABALV22)</span></dd></div>
+              <div class="stub-row"><dt>Maksājuma mērķis</dt><dd><span id="ref" data-f="reference"></span><button type="button" class="copy-btn" data-copy="#ref" aria-label="Kopēt: Maksājuma mērķis"><span class="fd-copy-label">Kopēt</span></button></dd></div>
+            </dl>
+            <p class="ticket-note" style="margin-top:18px">Pārskaitījumi progresa joslā parādās pēc tam, kad esam tos pārbaudījuši — parasti 1–3 darba dienu laikā.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="final">
+    <div class="wrap">
+      <div class="footer" style="margin-top:0">
+        <div>
+          <p>Biedrība FilmuDari · Reģ. nr. [..]</p>
+          <p>Mezgli, Cenu pagasts, Jelgavas novads, LV-3018</p>
+        </div>
+        <div>
+          <p>darifilmu@gmail.com · +371 24922018</p>
+          <a href="#">Privātuma politika</a>
+        </div>
+        <p>© 2026 FilmuDari. Visas tiesības aizsargātas.</p>
+      </div>
+    </div>
+    <div class="bar bar-bottom" aria-hidden="true"></div>
+  </footer>
+
+  <script src="../shared/content.js"></script>
+  <script src="../shared/fd.js"></script>
+</body>
+</html>
