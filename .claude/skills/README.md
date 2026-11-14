@@ -9,5 +9,7 @@ One design skill per prototype. Vendored as plain text (no scripts, no hooks).
 | C — Plakāts | `riso` | https://github.com/bergside/awesome-design-skills/tree/main/skills/riso (MIT) |
 | D — Skicenes | `sketch` | https://github.com/bergside/awesome-design-skills/tree/main/skills/sketch (MIT). Font override: Shantell Sans (Delicious Handrawn misplaces Ķ Ļ Ņ cedillas) |
 | E — (world chosen by the skill) | `impeccable` 4.9.1 | https://github.com/pbakaus/impeccable (Apache 2.0). Launcher fetches a sha256-pinned engine from the repo's GitHub releases into ~/.impeccable |
+| F — (dealt by the skill) | `taste-skill` (design-taste-frontend) | https://github.com/leonxlnx/taste-skill (MIT). Not vendored (40 MB kit); read from a scratch clone, only used assets copied into the page folder |
+| G — (chosen by the skill) | `ui-ux-pro-max` | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill (MIT). Tests excluded; scripts search local data only |
 
 `docs/design-directions.md` and `CLAUDE.md` win over any skill default (palette, fonts) where they conflict.

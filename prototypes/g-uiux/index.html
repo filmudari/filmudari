@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FilmuDari · 10 filmas. 10 stāsti. Viens kopīgs sākums.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="tw.js"></script>
+  <link rel="stylesheet" href="../shared/fd.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans text-[17px] leading-relaxed antialiased">
+  <a href="#saturs" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:rounded-lg">Pāriet uz saturu</a>
+
+  <header class="mx-auto max-w-page px-4 sm:px-8 h-[72px] flex items-center justify-between">
+    <a href="index.html" aria-label="FilmuDari" class="inline-flex items-center min-h-[44px]"><span class="fd-logo h-6 sm:h-7 text-ink" aria-hidden="true"></span></a>
+    <div class="flex items-center gap-2">
+      <button type="button" data-video-open class="hidden md:inline-flex btn text-ink hover:text-carmine px-4">Skatīties video</button>
+      <a href="#ziedot" class="btn btn-primary !min-h-[44px] !px-5 text-[15px]">ZIEDOT</a>
+    </div>
+  </header>
+
+  <main id="saturs">
+    <!-- Hero: the slogan, then the campaign's ledger as the main object, then the invitation. -->
+    <section class="mx-auto max-w-page px-4 sm:px-8 pt-6 sm:pt-8 lg:pt-6" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="serif-display font-semibold text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.25rem] max-w-[22ch] lg:max-w-none">10 filmas. 10 stāsti. <span class="text-carmine">Viens kopīgs sākums.</span></h1>
+
+      <div class="mt-6 lg:mt-8 rounded-2xl bg-surface border border-line p-5 sm:p-7 shadow-[0_1px_0_rgb(0_0_0/0.03)]">
+        <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.08em] text-muted">Saziedots</p>
+            <p class="serif-display tnum font-semibold text-5xl sm:text-6xl leading-none mt-1" data-num="raised">4 380 €</p>
+          </div>
+          <dl class="flex gap-x-10 gap-y-3 tnum">
+            <div>
+              <dt class="text-sm text-muted">Vēl trūkst</dt>
+              <dd class="text-2xl font-semibold" data-num="remaining">7 620 €</dd>
+            </div>
+            <div>
+              <dt class="text-sm text-muted">Mērķis</dt>
+              <dd class="text-2xl font-semibold" data-num="goal">12 000 €</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="battery mt-5" data-progress>
+          <div class="battery-shell" data-cells aria-hidden="true"></div>
+          <p class="pct-tag tnum"><span class="font-semibold text-ink" data-num="percent">36,5 %</span> no mērķa</p>
+        </div>
+        <p class="mt-2 flex items-start gap-2 text-sm text-muted">
+          <svg class="mt-0.5 h-4 w-4 shrink-0 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          Joslā redzami tikai saņemtie un pārbaudītie ziedojumi.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-6">
+          <p class="text-lg sm:text-xl leading-relaxed max-w-[56ch]">Latvijas Kultūras akadēmijas audiovizuālās mākslas 2. kursa studenti gatavojas uzņemt desmit īsfilmas. Idejas ir, komandas ir, apņēmība ir — trūkst līdzekļu, lai stāsti nonāktu uz ekrāna. Ar tavu atbalstu tas izdosies.</p>
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="#ziedot" class="btn btn-primary !min-h-[56px] !px-10 text-lg" data-dock-hide>ZIEDOT</a>
+            <button type="button" class="btn btn-quiet" data-video-open>
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              Skatīties video
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-5 lg:col-start-8">
+          <button type="button" class="facade group" data-video-open>
+            <span class="facade-mosaic" aria-hidden="true" id="mosaic"></span>
+            <span class="facade-grid" aria-hidden="true"></span>
+            <span class="facade-play" aria-hidden="true"><svg class="h-7 w-7 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+            <span class="absolute left-5 bottom-5 right-5 flex items-end justify-between gap-4">
+              <span class="serif-display text-xl sm:text-2xl font-semibold">Iepazīsti projektu</span>
+              <span class="text-sm text-white/80 underline-offset-4 group-hover:underline">Atskaņot video</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campaign body: reading column plus a donation rail that stays beside it on desktop. -->
+    <div class="mx-auto max-w-page px-4 sm:px-8 mt-20 lg:mt-28 grid gap-16 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-x-16 xl:gap-x-24">
+
+      <section id="par" class="lg:col-start-1" aria-labelledby="par-title">
+        <h2 id="par-title" class="serif-display font-semibold text-3xl sm:text-4xl">Kas ir FilmuDari?</h2>
+        <p class="mt-4 text-xl leading-relaxed max-w-[60ch]">FilmuDari ir biedrība, kas atbalsta jaunos Latvijas kino veidotājus ceļā no idejas līdz gatavai filmai.</p>
+        <div class="mt-10 grid gap-10 md:grid-cols-2 border-t border-line pt-8">
+          <div>
+            <h3 class="font-bold text-lg">Kāpēc šī kampaņa?</h3>
+            <p class="mt-2 text-muted">Studentu kursa darbi ir pirmā reize, kad jaunie režisori, operatori, montāžas režisori un producenti strādā kā īsta filmēšanas komanda. Akadēmija dod zināšanas, bet filmēšanai vajag tehniku, lokācijas, transportu un aktierus — un tas maksā. Šī kampaņa palīdz desmit komandām savas idejas īstenot pilnvērtīgi.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg">Kāpēc tas ir svarīgi?</h3>
+            <p class="mt-2 text-muted">Katrs Latvijas kino vārds, ko šodien zinām, kādreiz sāka ar pirmo īsfilmu. Atbalstot studentus tagad, tu palīdzi izaugt nākamajai paaudzei, kas stāstīs mūsu stāstus uz lielā ekrāna.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="filmas" class="lg:col-start-1" aria-labelledby="filmas-title">
+        <h2 id="filmas-title" class="serif-display font-semibold text-3xl sm:text-4xl">10 filmas — 10 stāsti</h2>
+        <p class="mt-2 text-lg text-muted">Desmit komandas, desmit idejas. Iepazīsti katru no tām.</p>
+        <ol class="mt-6 border-t border-line divide-y divide-line" data-render="films" data-template="#film-tpl"></ol>
+        <template id="film-tpl">
+          <li>
+            <a data-href href="film.html" class="film-row grid grid-cols-[104px_minmax(0,1fr)] sm:grid-cols-[176px_minmax(0,1fr)] gap-4 sm:gap-6 items-center py-4 sm:-mx-3 sm:px-3 rounded-xl">
+              <span class="still block aspect-[4/3] rounded-lg" aria-hidden="true"><span class="still-num text-3xl sm:text-4xl" data-f="num"></span></span>
+              <span class="block">
+                <span class="block serif-display font-semibold text-xl sm:text-2xl leading-tight" data-f="title"></span>
+                <span class="block mt-1 text-muted leading-snug" data-f="idea"></span>
+                <span class="film-more mt-2 inline-flex items-center gap-1 text-[15px] font-semibold">Uzzināt vairāk <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </span>
+            </a>
+          </li>
+        </template>
+      </section>
+
+      <aside id="ziedot" class="lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:self-start lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto rounded-2xl bg-surface border border-line" aria-labelledby="ziedot-title" data-dock-hide>
+        <form data-donate class="p-6 sm:p-7" novalidate>
+          <h2 id="ziedot-title" class="serif-display font-semibold text-2xl sm:text-[1.75rem] leading-tight">Atbalsti jauno Latvijas kino</h2>
+          <fieldset class="mt-5">
+            <legend class="text-sm font-semibold">Izvēlies summu</legend>
+            <div class="mt-2 grid grid-cols-5 gap-2 tnum">
+              <button type="button" class="amount min-h-[48px] rounded-xl border border-line font-semibold transition-colors" data-amount="5" aria-pressed="false">5 €</button>
+              <button type="button" class="amount min-h-[48px] rounded-xl border border-line font-semibold transition-colors" data-amount="10" aria-pressed="false">10 €</button>
+              <button type="button" class="amount min-h-[48px] rounded-xl border border-line font-semibold transition-colors" data-amount="20" aria-pressed="true">20 €</button>
+              <button type="button" class="amount min-h-[48px] rounded-xl border border-line font-semibold transition-colors" data-amount="50" aria-pressed="false">50 €</button>
+              <button type="button" class="amount min-h-[48px] rounded-xl border border-line font-semibold transition-colors" data-amount="100" aria-pressed="false">100 €</button>
+            </div>
+          </fieldset>
+          <div class="mt-4">
+            <label for="custom" class="text-sm font-semibold">Cita summa (€)</label>
+            <input id="custom" name="custom" inputmode="decimal" autocomplete="off" aria-describedby="min-hint" class="mt-1 block w-full min-h-[48px] rounded-xl border border-line bg-paper px-4 tnum focus:border-ink">
+            <p id="min-hint" class="min-hint mt-1 text-sm text-muted">Minimālā summa — 2 €</p>
+          </div>
+          <div class="mt-4">
+            <label for="name" class="text-sm font-semibold">Tavs vārds (nav obligāti)</label>
+            <input id="name" name="name" autocomplete="name" class="mt-1 block w-full min-h-[48px] rounded-xl border border-line bg-paper px-4 focus:border-ink">
+          </div>
+          <label class="mt-3 flex items-start gap-3 min-h-[44px] py-2 cursor-pointer">
+            <input type="checkbox" name="show" class="mt-1 h-5 w-5 shrink-0 accent-[#9E3039]">
+            <span>Rādīt manu vārdu atbalstītāju sarakstā</span>
+          </label>
+          <p class="text-sm text-muted">Ja vārdu nenorādīsi vai neatzīmēsi, ziedosi anonīmi.</p>
+          <button type="submit" class="btn btn-primary w-full mt-5 !min-h-[56px] text-lg tnum"><span data-donate-label>Ziedot 20 €</span></button>
+          <ul class="mt-5 space-y-3 text-sm text-muted">
+            <li class="flex gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10M19 21V10M9 21v-7M15 21v-7M2 10 12 3l10 7z"/></svg>Ziedojums tiek ieskaitīts biedrības FilmuDari kontā, un visi līdzekļi tiek izlietoti 10 studentu filmu tapšanai.</li>
+            <li class="flex gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Maksājums notiek drošā maksājumu vidē ar tavas bankas vai kartes starpniecību.</li>
+          </ul>
+        </form>
+
+        <details class="border-t border-line">
+          <summary class="flex items-center justify-between gap-4 px-6 sm:px-7 min-h-[60px] font-semibold">
+            Vēlies ziedot ar pārskaitījumu?
+            <svg class="chev h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 sm:px-7 pb-6">
+            <dl class="text-[15px] divide-y divide-line border-y border-line">
+              <div class="py-2.5 grid grid-cols-[7.5rem_1fr] gap-2"><dt class="text-muted">Saņēmējs</dt><dd class="font-semibold">Biedrība FilmuDari</dd></div>
+              <div class="py-2.5 grid grid-cols-[7.5rem_1fr] gap-2"><dt class="text-muted">Reģ. nr.</dt><dd>[reģistrācijas numurs]</dd></div>
+              <div class="py-2.5 grid grid-cols-[7.5rem_1fr_auto] gap-2 items-center"><dt class="text-muted">Konts</dt><dd id="iban" class="font-semibold tnum break-all">LV00 HABA 0000 0000 0000 0</dd>
+                <dd><button type="button" data-copy="#iban" class="min-h-[44px] px-3 rounded-lg border border-line text-sm font-semibold inline-flex items-center gap-1.5 transition-colors"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span class="fd-copy-label">Kopēt</span></button></dd></div>
+              <div class="py-2.5 grid grid-cols-[7.5rem_1fr] gap-2"><dt class="text-muted">Banka</dt><dd>Swedbank (HABALV22)</dd></div>
+              <div class="py-2.5 grid grid-cols-[7.5rem_1fr_auto] gap-2 items-center"><dt class="text-muted">Maksājuma mērķis</dt><dd id="ref" class="font-semibold">Ziedojums FilmuDari</dd>
+                <dd><button type="button" data-copy="#ref" class="min-h-[44px] px-3 rounded-lg border border-line text-sm font-semibold inline-flex items-center gap-1.5 transition-colors"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span class="fd-copy-label">Kopēt</span></button></dd></div>
+            </dl>
+            <p class="mt-3 text-sm text-muted">Pārskaitījumi progresa joslā parādās pēc tam, kad esam tos pārbaudījuši — parasti 1–3 darba dienu laikā.</p>
+          </div>
+        </details>
+      </aside>
+
+      <section id="atbalsta" class="lg:col-start-1" aria-labelledby="atbalsta-title">
+        <h2 id="atbalsta-title" class="serif-display font-semibold text-3xl sm:text-4xl">Mūs jau atbalsta</h2>
+        <ul class="supporters mt-6 flex flex-wrap gap-2" data-render="supporters" data-template="#supporter-tpl"></ul>
+        <template id="supporter-tpl">
+          <li class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2"><span class="h-1.5 w-1.5 rounded-full bg-carmine" aria-hidden="true"></span><span data-f="name"></span></li>
+        </template>
+      </section>
+    </div>
+
+    <section id="kontakti" class="mx-auto max-w-page px-4 sm:px-8 mt-24 lg:mt-32 mb-20" aria-labelledby="kontakti-title">
+      <div class="border-t border-ink pt-8 grid gap-8 lg:grid-cols-12">
+        <h2 id="kontakti-title" class="lg:col-span-4 serif-display font-semibold text-3xl sm:text-4xl">Sazinies ar mums</h2>
+        <ul class="lg:col-span-8 grid gap-x-8 gap-y-2 sm:grid-cols-2 text-lg">
+          <li><a class="flex items-center gap-3 min-h-[48px] hover:text-carmine" href="mailto:darifilmu@gmail.com"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>darifilmu@gmail.com</a></li>
+          <li><a class="flex items-center gap-3 min-h-[48px] hover:text-carmine tnum" href="tel:+37124922018"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>+371 24922018</a></li>
+          <li><a class="flex items-center gap-3 min-h-[48px] hover:text-carmine" href="https://www.instagram.com/filmudari/"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@filmudari</a></li>
+          <li><a class="flex items-center gap-3 min-h-[48px] hover:text-carmine" href="https://www.facebook.com/search/top/?q=Filmu%20Dari"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Filmu Dari</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ink text-white/80 pb-24 lg:pb-0">
+    <div class="mx-auto max-w-page px-4 sm:px-8 py-12 grid gap-8 md:grid-cols-[auto_1fr] md:gap-16 text-[15px]">
+      <span class="fd-logo h-7 text-white" aria-hidden="true"></span>
+      <div class="grid gap-1 md:justify-items-end md:text-right">
+        <p class="text-white">Biedrība FilmuDari · Reģ. nr. [..]</p>
+        <p>Mezgli, Cenu pagasts, Jelgavas novads, LV-3018</p>
+        <p class="tnum">darifilmu@gmail.com · +371 24922018</p>
+        <p class="mt-3 flex flex-wrap gap-x-6 gap-y-1 md:justify-end"><a href="#" class="underline underline-offset-4 hover:text-white inline-flex items-center min-h-[44px]">Privātuma politika</a><span class="inline-flex items-center">© 2026 FilmuDari. Visas tiesības aizsargātas.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="dock lg:hidden fixed inset-x-0 bottom-0 z-40 bg-surface/95 backdrop-blur border-t border-line px-4 py-3" inert>
+    <a href="#ziedot" class="btn btn-primary w-full !min-h-[52px] text-lg">ZIEDOT</a>
+  </div>
+
+  <dialog id="video" aria-labelledby="video-title">
+    <div class="relative rounded-2xl overflow-hidden bg-[#111315] text-white">
+      <div class="flex items-center justify-between gap-4 px-5 py-3">
+        <h2 id="video-title" class="serif-display text-lg font-semibold">Iepazīsti projektu</h2>
+        <button type="button" data-video-close class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center gap-2 rounded-lg px-3 hover:bg-white/10" autofocus>
+          <span class="text-sm">Aizvērt</span>
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="aspect-video grid place-items-center bg-[#0B0C0D]">
+        <span class="facade-play !static !m-0" aria-hidden="true"><svg class="h-7 w-7 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="../shared/content.js"></script>
+  <script>
+    document.getElementById("mosaic").innerHTML = FD.films.map((f, i) => `<span class="still" style="--accent:${f.accent};--i:${i}"></span>`).join("");
+  </script>
+  <script src="app.js"></script>
+  <script src="../shared/fd.js"></script>
+</body>
+</html>
