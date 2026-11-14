@@ -10,12 +10,13 @@ audiovisual arts students at the Latvian Academy of Culture (LKA). Site language
 - `docs/copy-lv.md` — Latvian copy for all pages (draft; placeholders marked `[..]`).
 
 ## Current phase: 1 — visual prototypes
-- Static HTML + Tailwind only, in `prototypes/a-kinozale/`, `prototypes/b-programma/`, `prototypes/c-plakats/`, `prototypes/d-skicenes/`.
+- Static HTML + Tailwind only, in `prototypes/a-kinozale/`, `prototypes/b-programma/`, `prototypes/c-plakats/`, `prototypes/d-skicenes/`, `prototypes/f-taste/`, `prototypes/g-uiux/`. (E and H were built and dropped; see git history.)
 - Each variant was built by its own agent with one design skill from `.claude/skills/` (mapping in `.claude/skills/README.md`).
 - Shared, read-only for variants: `prototypes/shared/` (content.js data, fd.js behaviour, fd.css logo, diacritics.html font test).
 - No backend, no real payments, no build step required (Tailwind CDN is fine for prototypes).
 - Each variant: `index.html` (homepage) and `film.html` (one film detail page). Must work at 390px and 1440px.
-- `prototypes/index.html` links all four for the client.
+- `prototypes/index.html` links all variants for the client. Live demo: https://filmudari.github.io/filmudari/ (repo `filmudari/filmudari`, GitHub Pages from `main`).
+- F alone uses Wikimedia Commons stand-in photos (credited in `f-taste/credits.html`); replace with real material in January.
 - Use the copy from `docs/copy-lv.md` verbatim — don't invent new Latvian text.
 
 ## Phase 2 (after a variant is chosen) — MVP build
