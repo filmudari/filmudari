@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fontu pārbaude</title>
+  <!-- Hard rule from CLAUDE.md: every font must render ā č ē ģ ī ķ ļ ņ š ū ž. Open this page and look before adopting a font. -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Instrument+Sans&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;1,6..72,400&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;1,400&family=Gelasio:ital@0;1&family=Ubuntu+Mono&family=Unbounded:wght@800&family=Space+Grotesk:wght@500&family=Overpass+Mono&family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; background: #fff; color: #111; }
+    .row { border-top: 1px solid #ddd; padding: 12px 0; }
+    .name { font: 12px monospace; color: #666; }
+    .sample { font-size: 44px; line-height: 1.25; }
+  </style>
+</head>
+<body>
+  <div id="rows"></div>
+  <script>
+    const text = "Ziedot ģimenēm ķēķī ļoti šūpļos — Mūs Vēlies Pēdējais sākums ĀČĒĢĪĶĻŅŠŪŽ";
+    const fonts = [
+      ["Barlow Condensed", "normal", 500], ["Instrument Sans", "normal", 400],
+      ["Fraunces", "normal", 300], ["Fraunces", "italic", 400],
+      ["Newsreader", "normal", 300], ["Newsreader", "italic", 400],
+      ["Instrument Serif", "normal", 400], ["Instrument Serif", "italic", 400],
+      ["Playfair Display", "normal", 400], ["Playfair Display", "italic", 400],
+      ["Gelasio", "normal", 400], ["Gelasio", "italic", 400], ["Ubuntu Mono", "normal", 400],
+      ["Unbounded", "normal", 800], ["Archivo Black", "normal", 400], ["Space Grotesk", "normal", 500], ["Overpass Mono", "normal", 400]
+    ];
+    document.getElementById("rows").innerHTML = fonts.map(([f, s, w]) =>
+      `<div class="row"><div class="name">${f} ${s} ${w}</div><div class="sample" style="font-family:'${f}';font-style:${s};font-weight:${w}">${text}</div></div>`).join("");
+  </script>
+</body>
+</html>

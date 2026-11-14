@@ -1,0 +1,23 @@
+/* Shared primitives. Variants style everything else. */
+.fd-logo {
+  display: inline-block;
+  aspect-ratio: 1231 / 215;
+  background-color: currentColor;
+  -webkit-mask: url(../../assets/logo/filmudari-wordmark.svg) center / contain no-repeat;
+  mask: url(../../assets/logo/filmudari-wordmark.svg) center / contain no-repeat;
+}
+
+[data-progress] .fd-fill {
+  width: 0;
+  transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-progress].is-charged .fd-fill { width: calc(var(--target) * 100%); }
+
+[data-copy][data-copied] .fd-copy-label::after { content: " ✓"; }
+
+dialog#video { padding: 0; border: 0; background: transparent; max-width: min(1100px, 92vw); width: 100%; }
+dialog#video::backdrop { background: rgb(0 0 0 / 0.85); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
