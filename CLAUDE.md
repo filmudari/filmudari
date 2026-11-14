@@ -10,10 +10,12 @@ audiovisual arts students at the Latvian Academy of Culture (LKA). Site language
 - `docs/copy-lv.md` — Latvian copy for all pages (draft; placeholders marked `[..]`).
 
 ## Current phase: 1 — visual prototypes
-- Static HTML + Tailwind only, in `prototypes/a-kinozale/`, `prototypes/b-programma/`, `prototypes/c-plakats/`.
+- Static HTML + Tailwind only, in `prototypes/a-kinozale/`, `prototypes/b-programma/`, `prototypes/c-plakats/`, `prototypes/d-skicenes/`.
+- Each variant was built by its own agent with one design skill from `.claude/skills/` (mapping in `.claude/skills/README.md`).
+- Shared, read-only for variants: `prototypes/shared/` (content.js data, fd.js behaviour, fd.css logo, diacritics.html font test).
 - No backend, no real payments, no build step required (Tailwind CDN is fine for prototypes).
 - Each variant: `index.html` (homepage) and `film.html` (one film detail page). Must work at 390px and 1440px.
-- `prototypes/index.html` links all three for the client.
+- `prototypes/index.html` links all four for the client.
 - Use the copy from `docs/copy-lv.md` verbatim — don't invent new Latvian text.
 
 ## Phase 2 (after a variant is chosen) — MVP build
@@ -25,7 +27,7 @@ audiovisual arts students at the Latvian Academy of Culture (LKA). Site language
   multi-campaign UI, per-film goals/progress bars, page builder.
 
 ## Hard rules
-- All fonts must support Latvian diacritics: ā č ē ģ ī ķ ļ ņ š ū ž (and capitals). Verify before using a font.
+- All fonts must support Latvian diacritics: ā č ē ģ ī ķ ļ ņ š ū ž (and capitals). Verify before using a font by rendering it in `prototypes/shared/diacritics.html` and looking: a `latin-ext` subset is not proof. Known broken: Fraunces, Newsreader, Delius, Darumadrop One, Antonio, Bodoni Moda, DM Serif Display, Delicious Handrawn (capital Ķ Ļ Ņ).
 - Never show per-film goals, percentages or rankings — only a film's amount / supporter count.
 - The thank-you page never claims the payment succeeded; it says the donation is being confirmed.
 - Video: thumbnail facade, load the player only on click (youtube-nocookie), open in a modal.
