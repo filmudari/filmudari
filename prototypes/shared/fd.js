@@ -3,7 +3,12 @@
   const FD = window.FD;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   // lv-LV leaves 4-digit numbers ungrouped; the copy writes "4 380 €".
-  const eur = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €";
+  const eur = (n) => {
+    const cents = Math.round(n * 100);
+    const whole = String(Math.trunc(cents / 100)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    const frac = cents % 100 ? "," + String(Math.abs(cents % 100)).padStart(2, "0") : "";
+    return whole + frac + " €";
+  };
   const pad = (n) => String(n).padStart(2, "0");
   const remaining = FD.goal - FD.raised;
   const pct = (FD.raised / FD.goal) * 100;

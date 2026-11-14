@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FilmuDari · 10 filmas. 10 stāsti.</title>
+  <meta name="description" content="Latvijas Kultūras akadēmijas audiovizuālās mākslas 2. kursa studenti gatavojas uzņemt desmit īsfilmas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Big+Shoulders+Stencil+Display:wght@800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="../shared/fd.css">
+  <link rel="stylesheet" href="karba.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="rl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset=".55" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <linearGradient id="rd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#232a2a" stop-opacity="0"/><stop offset=".45" stop-color="#232a2a" stop-opacity=".12"/><stop offset="1" stop-color="#232a2a" stop-opacity=".6"/></linearGradient>
+      <symbol id="ridges" viewBox="-100 -100 200 200">
+        <g fill="none" stroke-width="1.6">
+          <circle r="98.6" stroke="rgb(30 36 36 / .45)" stroke-width="1.4"/>
+          <circle r="93" stroke="url(#rd)"/><circle r="93.8" stroke="url(#rl)"/>
+          <circle r="89.4" stroke="url(#rl)"/><circle r="88.6" stroke="url(#rd)"/>
+          <circle r="71" stroke="url(#rd)"/><circle r="71.8" stroke="url(#rl)"/>
+          <circle r="68.6" stroke="url(#rl)"/><circle r="67.9" stroke="url(#rd)"/>
+          <circle r="41" stroke="url(#rd)"/><circle r="41.8" stroke="url(#rl)"/>
+          <circle r="17" stroke="url(#rd)"/><circle r="17.8" stroke="url(#rl)"/>
+        </g>
+      </symbol>
+      <symbol id="scene" viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice">
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3537"/><stop offset=".62" stop-color="#5b6764"/><stop offset="1" stop-color="#7d8780"/></linearGradient>
+        <radialGradient id="glow"><stop offset="0" stop-color="#e9f3a8" stop-opacity=".9"/><stop offset=".25" stop-color="#d5ee2c" stop-opacity=".28"/><stop offset="1" stop-color="#d5ee2c" stop-opacity="0"/></radialGradient>
+        <rect width="160" height="90" fill="url(#sky)"/>
+        <path d="M0 58 L6 55 L9 57 L13 52 L16 56 L22 54 L27 50 L30 55 L36 53 L41 49 L45 54 L52 52 L57 55 L64 53 L70 56 L160 57 L160 90 L0 90Z" fill="#2a3233"/>
+        <path d="M0 62 H160 V90 H0Z" fill="#1c2223"/>
+        <path d="M0 74 L160 66" stroke="#4d5756" stroke-width=".5"/><path d="M0 80 L160 68" stroke="#4d5756" stroke-width=".5"/>
+        <path d="M116 66 V30 M112 31 H120" stroke="#141a1b" stroke-width="1.1" fill="none"/>
+        <circle cx="116" cy="33" r="16" fill="url(#glow)"/>
+        <circle cx="116" cy="33" r="1.3" fill="#f2f7cf"/>
+      </symbol>
+      <symbol id="roll" viewBox="-36 -36 72 72">
+        <circle r="35" fill="#d5ee2c"/>
+        <g fill="none" stroke="rgb(60 70 0 / .18)" stroke-width=".6"><circle r="32"/><circle r="29"/><circle r="26"/><circle r="23"/></g>
+        <circle r="35" fill="none" stroke="rgb(60 70 0 / .35)" stroke-width="1"/>
+        <circle r="20" fill="#c4ad7c"/>
+        <circle r="20" fill="none" stroke="#9c8659" stroke-width="1"/>
+        <circle r="15" fill="#6d7473"/>
+        <circle r="15" fill="none" stroke="#4f5657" stroke-width="1.2"/>
+        <path d="M0 -35 L0 -20" stroke="rgb(40 48 0 / .55)" stroke-width="1.4"/>
+        <path d="M-6 -17.6 A18 18 0 0 1 6 -17.6" stroke="#8a7550" stroke-width="1.4" fill="none"/>
+      </symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M20 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.5v17L20 12z" fill="currentColor"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="hero">
+    <div class="lid hero-lid" aria-hidden="true"><svg><use href="#ridges"/></svg></div>
+    <div class="wrap hero-inner">
+      <div class="lift">
+        <div class="tape slogan-strip torn-r">
+          <span class="fd-logo" role="img" aria-label="FilmuDari"></span>
+          <h1 class="slogan"><span>10 filmas. 10 stāsti.</span> <span>Viens kopīgs sākums.</span></h1>
+        </div>
+      </div>
+
+      <div class="hero-mid">
+        <div>
+          <p class="intro">Latvijas Kultūras akadēmijas audiovizuālās mākslas 2. kursa studenti gatavojas uzņemt desmit īsfilmas. Idejas ir, komandas ir, apņēmība ir — trūkst līdzekļu, lai stāsti nonāktu uz ekrāna. Ar tavu atbalstu tas izdosies.</p>
+          <div class="hero-actions">
+            <a class="tab tab--go tab--big tab--caps" href="#ziedot">ZIEDOT</a>
+            <button class="link-quiet" type="button" data-video-open>
+              <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Skatīties video
+            </button>
+          </div>
+        </div>
+
+        <figure class="print" style="margin:0">
+          <button class="print-btn" type="button" data-video-open aria-label="Atskaņot video: Iepazīsti projektu">
+            <svg class="scene" aria-hidden="true"><use href="#scene"/></svg>
+            <span class="play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+          </button>
+          <figcaption class="print-caption tape torn-lr" aria-hidden="true">Iepazīsti projektu</figcaption>
+          <span class="tape corner-tape a torn-lr" aria-hidden="true"></span>
+          <span class="tape corner-tape b torn-lr" aria-hidden="true"></span>
+        </figure>
+      </div>
+
+      <section aria-label="Kampaņas progress">
+        <div class="gauge-figs">
+          <p class="fig fig--lead"><span class="fig-label">Saziedots</span> <span class="fig-value num" data-num="raised">4 380 €</span></p>
+          <p class="fig"><span class="fig-label">Mērķis:</span> <span class="fig-value num" data-num="goal">12 000 €</span></p>
+          <p class="fig"><span class="fig-label">Vēl trūkst</span> <span class="fig-value num" data-num="remaining">7 620 €</span></p>
+          <p class="fig fig--pct"><span class="fig-value num" data-num="percent">36,5 %</span> <span class="fig-label">no mērķa</span></p>
+        </div>
+        <div class="battery" data-progress>
+          <div class="fd-fill">
+            <span class="roll" aria-hidden="true"><svg><use href="#roll"/></svg></span>
+          </div>
+        </div>
+        <p class="fineprint">Joslā redzami tikai saņemtie un pārbaudītie ziedojumi.</p>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <section class="section arc" style="--arc-x:-62%;--arc-y:-58%" aria-labelledby="par">
+      <div class="wrap about">
+        <div>
+          <h2 class="h2" id="par">Kas ir FilmuDari?</h2>
+          <p class="about-lead">FilmuDari ir biedrība, kas atbalsta jaunos Latvijas kino veidotājus ceļā no idejas līdz gatavai filmai.</p>
+        </div>
+        <div class="about-cols prose">
+          <div>
+            <h3 class="h3">Kāpēc šī kampaņa?</h3>
+            <p>Studentu kursa darbi ir pirmā reize, kad jaunie režisori, operatori, montāžas režisori un producenti strādā kā īsta filmēšanas komanda. Akadēmija dod zināšanas, bet filmēšanai vajag tehniku, lokācijas, transportu un aktierus — un tas maksā. Šī kampaņa palīdz desmit komandām savas idejas īstenot pilnvērtīgi.</p>
+          </div>
+          <div>
+            <h3 class="h3">Kāpēc tas ir svarīgi?</h3>
+            <p>Katrs Latvijas kino vārds, ko šodien zinām, kādreiz sāka ar pirmo īsfilmu. Atbalstot studentus tagad, tu palīdzi izaugt nākamajai paaudzei, kas stāstīs mūsu stāstus uz lielā ekrāna.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" aria-labelledby="filmas" id="filmas-sadala">
+      <div class="wrap">
+        <div class="films-head">
+          <h2 class="h2" id="filmas">10 filmas — 10 stāsti</h2>
+          <p class="films-sub">Desmit komandas, desmit idejas. Iepazīsti katru no tām.</p>
+        </div>
+        <ul class="cans" data-render="films" data-template="#tpl-film"></ul>
+      </div>
+    </section>
+
+    <section class="section give arc" id="ziedot" aria-labelledby="ziedot-h">
+      <div class="wrap">
+        <div class="lift" style="display:inline-block"><h2 class="h2 h2-strip tape torn-lr" id="ziedot-h">Atbalsti jauno Latvijas kino</h2></div>
+        <div class="give-grid">
+          <div class="lift">
+            <form class="tape label-panel" data-donate novalidate>
+              <fieldset class="amts">
+                <legend>Izvēlies summu</legend>
+                <button type="button" class="amt num" data-amount="5" aria-pressed="false">5 €</button>
+                <button type="button" class="amt num" data-amount="10" aria-pressed="false">10 €</button>
+                <button type="button" class="amt num" data-amount="20" aria-pressed="true">20 €</button>
+                <button type="button" class="amt num" data-amount="50" aria-pressed="false">50 €</button>
+                <button type="button" class="amt num" data-amount="100" aria-pressed="false">100 €</button>
+              </fieldset>
+              <div class="row2">
+                <label class="field">
+                  <span class="field-label" style="display:block">Cita summa (€)</span>
+                  <input class="input num" name="custom" inputmode="decimal" autocomplete="off" aria-describedby="min-hint">
+                  <span class="hint" id="min-hint">Minimālā summa — 2 €</span>
+                </label>
+                <label class="field">
+                  <span class="field-label" style="display:block">Tavs vārds (nav obligāti)</span>
+                  <input class="input" name="name" autocomplete="name">
+                </label>
+              </div>
+              <label class="check"><input type="checkbox" name="public"> <span>Rādīt manu vārdu atbalstītāju sarakstā</span></label>
+              <p class="small">Ja vārdu nenorādīsi vai neatzīmēsi, ziedosi anonīmi.</p>
+              <div class="submit-row">
+                <button class="tab tab--go" type="submit"><span data-donate-label>Ziedot 20 €</span></button>
+              </div>
+              <div class="assure">
+                <p class="small">Ziedojums tiek ieskaitīts biedrības FilmuDari kontā, un visi līdzekļi tiek izlietoti 10 studentu filmu tapšanai.</p>
+                <p class="small">Maksājums notiek drošā maksājumu vidē ar tavas bankas vai kartes starpniecību.</p>
+              </div>
+            </form>
+          </div>
+
+          <div class="bank">
+            <h3 class="h3">Vēlies ziedot ar pārskaitījumu?</h3>
+            <dl>
+              <div class="bank-row"><dt>Saņēmējs</dt><dd id="b-name">Biedrība FilmuDari</dd><button class="tab copy" type="button" data-copy="#b-name"><span class="fd-copy-label">Kopēt</span></button></div>
+              <div class="bank-row"><dt>Reģ. nr.</dt><dd>[reģistrācijas numurs]</dd></div>
+              <div class="bank-row"><dt>Konts</dt><dd id="b-iban" class="num">LV00 HABA 0000 0000 0000 0</dd><button class="tab copy" type="button" data-copy="#b-iban"><span class="fd-copy-label">Kopēt</span></button></div>
+              <div class="bank-row"><dt>Banka</dt><dd>Swedbank (HABALV22)</dd></div>
+              <div class="bank-row"><dt>Maksājuma mērķis</dt><dd id="b-ref">Ziedojums FilmuDari</dd><button class="tab copy" type="button" data-copy="#b-ref"><span class="fd-copy-label">Kopēt</span></button></div>
+            </dl>
+            <p class="small bank-note">Pārskaitījumi progresa joslā parādās pēc tam, kad esam tos pārbaudījuši — parasti 1–3 darba dienu laikā.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section arc" style="--arc-x:30%;--arc-y:-120%" aria-labelledby="atbalsta">
+      <div class="wrap">
+        <h2 class="h2" id="atbalsta">Mūs jau atbalsta</h2>
+        <ul class="names" data-render="supporters" data-template="#tpl-name"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rim section">
+    <div class="wrap">
+      <h2 class="h2">Sazinies ar mums</h2>
+      <ul class="contact-list">
+        <li><span>E-pasts</span><a href="mailto:darifilmu@gmail.com">darifilmu@gmail.com</a></li>
+        <li><span>Tālrunis</span><a href="tel:+37124922018">+371 24922018</a></li>
+        <li><span>Instagram</span><a href="https://www.instagram.com/filmudari/">@filmudari</a></li>
+        <li><span>Facebook</span><a href="https://www.facebook.com/search/top?q=Filmu%20Dari">Filmu Dari</a></li>
+      </ul>
+      <div class="footer">
+        <div>
+          <p>Biedrība FilmuDari · Reģ. nr. [..]</p>
+          <p>Mezgli, Cenu pagasts, Jelgavas novads, LV-3018</p>
+          <p>darifilmu@gmail.com · +371 24922018</p>
+        </div>
+        <div>
+          <p><a href="#">Privātuma politika</a></p>
+          <p>© 2026 FilmuDari. Visas tiesības aizsargātas.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="video" aria-labelledby="dlg-title">
+    <div class="dlg">
+      <button class="tab tab--go dlg-close" type="button" data-video-close>Aizvērt</button>
+      <div class="dlg-screen">
+        <svg class="scene" aria-hidden="true"><use href="#scene"/></svg>
+        <p class="dlg-title" id="dlg-title">Iepazīsti projektu</p>
+      </div>
+    </div>
+  </dialog>
+
+  <template id="tpl-film">
+    <li class="film">
+      <div class="can" aria-hidden="true">
+        <div class="lid"><svg><use href="#ridges"/></svg></div>
+        <span class="can-no num" data-f="num"></span>
+        <div class="can-tape lift"><div class="tape torn-lr" style="--tape-c: var(--accent)"><span data-f="title"></span><span class="can-count"><span data-f="supporters"></span> ziedotāji</span></div></div>
+      </div>
+      <h3 class="sr-only" data-f="title"></h3>
+      <p class="film-idea" data-f="idea"></p>
+      <a class="film-more" data-href>Uzzināt vairāk</a>
+    </li>
+  </template>
+  <template id="tpl-name"><li class="tape torn-lr" data-f="name"></li></template>
+
+  <script src="../shared/content.js"></script>
+  <script src="../shared/fd.js"></script>
+</body>
+</html>

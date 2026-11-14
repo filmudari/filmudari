@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-14T13:30:00Z",
+  "title": "Design System: FilmuDari E \"Kārba\"",
+  "extensions": {
+    "colorMeta": {
+      "go": { "role": "primary", "displayName": "Go Tape", "tonalRamp": ["#2f3505", "#4c560a", "#6b780f", "#8c9d14", "#b9d21a", "#d5ee2c", "#e4f574", "#f3fbc4"] },
+      "zinc": { "role": "neutral", "displayName": "Zinc", "tonalRamp": ["#262a2a", "#3f4647", "#5c6362", "#7d8584", "#959b9a", "#aeb3b1", "#c9cdcc", "#e6e8e7"] },
+      "tape": { "role": "neutral", "displayName": "Camera Tape" },
+      "ink": { "role": "neutral", "displayName": "Marker Ink" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Tape Display", "purpose": "Slogan and film titles on tape." },
+      "figure": { "displayName": "Can Stencil", "purpose": "Amounts, totals, can numbers." }
+    },
+    "shadows": [
+      { "name": "tape-lift", "value": "drop-shadow(0 1px 1px rgb(20 24 24 / 0.25)) drop-shadow(0 5px 7px rgb(20 24 24 / 0.18))", "purpose": "Tape lying on steel." },
+      { "name": "tab", "value": "0 1px 1px rgb(20 24 24 / 0.25), 0 8px 16px -9px rgb(20 24 24 / 0.55)", "purpose": "Button tabs at rest." },
+      { "name": "channel", "value": "inset 0 2px 4px rgb(10 14 14 / 0.55), inset 0 -1px 0 rgb(255 255 255 / 0.35)", "purpose": "Recessed battery channel." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "All state changes and the roll." },
+      { "name": "roll", "value": "1.8s, -760deg to 0deg", "purpose": "Tape roll laying the progress fill on load." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "860px" },
+      { "name": "lg", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Tape Tab",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "ZIEDOT and submit.",
+      "html": "<a class=\"ds-tab\" href=\"#\">ZIEDOT</a>",
+      "css": ".ds-tab{display:inline-flex;min-height:48px;align-items:center;padding:.7em 1.4em;background:#d5ee2c;color:#131516;font-family:Archivo,sans-serif;font-weight:800;letter-spacing:.08em;text-decoration:none;box-shadow:0 1px 1px rgb(20 24 24/.25),0 8px 16px -9px rgb(20 24 24/.55);transition:transform .25s cubic-bezier(.22,1,.36,1)}.ds-tab:hover{transform:translateY(-1px)}.ds-tab:active{transform:translateY(1px);box-shadow:0 1px 1px rgb(20 24 24/.3)}.ds-tab:focus-visible{outline:3px solid #131516;outline-offset:3px}"
+    },
+    {
+      "name": "Amount Tab",
+      "kind": "chip",
+      "refersTo": "amount-tab",
+      "description": "Preset amounts; the chosen one turns go tape and rises.",
+      "html": "<button class=\"ds-amt\" aria-pressed=\"true\">20 €</button><button class=\"ds-amt\" aria-pressed=\"false\">50 €</button>",
+      "css": ".ds-amt{min-height:60px;min-width:84px;border:0;font-family:'Big Shoulders Stencil Display',sans-serif;font-weight:800;font-size:1.6rem;color:#1f2425;background:#e4e3dc;box-shadow:inset 0 0 0 1px rgb(20 24 24/.12);transition:transform .25s}.ds-amt[aria-pressed=true]{background:#d5ee2c;color:#131516;transform:translateY(-3px);box-shadow:0 1px 1px rgb(20 24 24/.25),0 10px 16px -9px rgb(20 24 24/.6)}.ds-amt:focus-visible{outline:3px solid #131516;outline-offset:3px}"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Underlined well.",
+      "html": "<input class=\"ds-input\" placeholder=\"Cita summa (€)\">",
+      "css": ".ds-input{min-height:52px;padding:10px 14px;background:#fbfbf8;border:0;border-bottom:2px solid #1f2425;box-shadow:inset 0 1px 3px rgb(20 24 24/.12);font:inherit;color:#131516}.ds-input:focus-visible{outline:3px solid #131516;outline-offset:2px}"
+    },
+    {
+      "name": "Battery",
+      "kind": "custom",
+      "description": "Steel channel, terminal cap, go-tape fill.",
+      "html": "<div class=\"ds-bat\"><div class=\"ds-fill\"></div></div>",
+      "css": ".ds-bat{position:relative;height:44px;width:320px;border-radius:5px;background:linear-gradient(#6d7473,#8a9190);box-shadow:inset 0 2px 4px rgb(10 14 14/.55)}.ds-bat:after{content:'';position:absolute;right:-14px;top:11px;width:12px;height:22px;border-radius:0 4px 4px 0;background:#9aa09f}.ds-fill{width:36.5%;height:100%;background:#d5ee2c;border-radius:4px 0 0 4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ten cans waiting to be filled",
+    "overview": "A galvanized film-can lid sealed with camera tape. Every working part is written on tape; chartreuse tape marks money and action.",
+    "keyCharacteristics": ["Matte zinc with spangle", "Camera tape with torn ends", "Stencilled figures", "Tape-roll progress"],
+    "rules": [
+      { "name": "The One Tape Rule", "body": "Chartreuse marks money and action only.", "section": "colors" },
+      { "name": "Macron Floor", "body": "Latvian display at weight 800, wdth 80 or wider.", "section": "typography" }
+    ],
+    "dos": ["Put every working label on tape.", "Keep zinc on every section."],
+    "donts": ["No conic brushed-metal sheen.", "No per-film goals or percentages."]
+  }
+}
